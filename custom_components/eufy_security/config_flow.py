@@ -23,7 +23,7 @@ class EufySecurityOptionFlowHandler(config_entries.OptionsFlow):
                 vol.Optional(CONF_USE_RTSP_SERVER_ADDON, default=self.config_entry.options.get(CONF_USE_RTSP_SERVER_ADDON, DEFAULT_USE_RTSP_SERVER_ADDON)): bool,
                 vol.Optional(CONF_RTSP_SERVER_ADDRESS, default=self.config_entry.options.get(CONF_RTSP_SERVER_ADDRESS, config_entry.data.get(CONF_HOST))): str,
                 vol.Optional(CONF_RTSP_SERVER_PORT, default=self.config_entry.options.get(CONF_RTSP_SERVER_PORT, DEFAULT_RTSP_SERVER_PORT)): int,
-                vol.Optional(CONF_FFMPEG_ANALYZE_DURATION, default=self.config_entry.options.get(CONF_FFMPEG_ANALYZE_DURATION, DEFAULT_FFMPEG_ANALYZE_DURATION)): vol.All(vol.Coerce(float), vol.Range(min=1, max=5)),
+                vol.Optional(CONF_FFMPEG_ANALYZE_DURATION, default=self.config_entry.options.get(CONF_FFMPEG_ANALYZE_DURATION, DEFAULT_FFMPEG_ANALYZE_DURATION)): vol.All(vol.Coerce(float), vol.Range(min=1, max=100)),
                 vol.Optional(CONF_AUTO_START_STREAM, default=self.config_entry.options.get(CONF_AUTO_START_STREAM, DEFAULT_AUTO_START_STREAM)): bool,
             }
         )
